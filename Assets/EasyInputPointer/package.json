@@ -1,0 +1,10 @@
+{
+  "name": "com.tokyo-tsushin.easyinputpointer",
+  "displayName": "Easy Input Pointer",
+  "version": "1.0.0",
+  "unity": "2020.3",
+  "description": "Display pointer at input position",
+  "author": {
+    "name": "Tokyo Tsushin"
+  }
+}
