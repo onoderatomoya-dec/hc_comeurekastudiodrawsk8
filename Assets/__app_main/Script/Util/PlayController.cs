@@ -27,10 +27,17 @@ namespace Main
         [SerializeField] public GameObject _gameContents;
         
         // プレイヤー
-        //[SerializeField] public Player _player;
+        [SerializeField] public Player _player;
+        [SerializeField] public Skate _skate;
         
         // 操作ができるかフラグ
         private bool _isOperation = false;
+        
+        // 障害物にぶつかって死亡イベント
+        private bool _isEvent1 = false;
+        
+
+        [SerializeField] public GameObject _playerRagdollPrefab;
         
         void Awake()
         {
@@ -52,6 +59,7 @@ namespace Main
 
             // ゲームデータ初期化
             InitData();
+            
         }
         
         public void InitData()
@@ -273,6 +281,17 @@ namespace Main
         public void ShowInterstitial()
         {
             MaxManager.Instance.ShowInterstitial(); 
+        }
+
+        // プレイヤーとボードを落下
+        public void OnDeathEvent1()
+        {
+            if (_isEvent1) return;
+            _isEvent1 = true;
+            
+            // イベント
+            _player.OnDeathEvent1();
+            _skate.OnDeathEvent1();
         }
     }
 }

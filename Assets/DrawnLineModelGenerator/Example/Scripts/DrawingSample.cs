@@ -11,7 +11,7 @@ namespace DLMG.Sample
         [SerializeField] private Material _fixedLineMaterial = null;
         [SerializeField] private GameObject _skateStartObject;
         [SerializeField] private GameObject _skateObject;
-        [SerializeField] private Player _player;
+        [SerializeField] private Main.Player _player;
 
         private bool _writing = false;
         private bool _separatedDrawingLine;
@@ -20,6 +20,7 @@ namespace DLMG.Sample
         private DrawnLineModelGenerateDomain _drawnLineModelGenerateDomain;
         private int _drawCount = 0;
         private List<Vector3> _rootPosition = new List<Vector3>();
+        private float _length = 0;
 
         private void Awake()
         {
@@ -76,6 +77,7 @@ namespace DLMG.Sample
 
             if (!_separatedDrawingLine)
             {
+                _length += Vector3.Distance(_lastPoint, worldPosition);
                 _rootPosition.Add(worldPosition);
                 _drawnLineModelGenerateDomain.AppendPoint(worldPosition);
                 _lastPoint = worldPosition;
@@ -118,10 +120,12 @@ namespace DLMG.Sample
                 this.CallAfter(0.15f, delegate
                 {
                     _player.GetGeneral().SetBools("isRun");
+                    _player.SetSmokeGameObject(true);
                     Vector3[] roots = _rootPosition.ToArray();
+                    float time = _length * 0.1f;
                     _skateObject.transform.DOPath(
                             path       : roots, //移動する座標をオブジェクトから抽出
-                            duration   : 1.0f,                              //移動時間
+                            duration   : time,                              //移動時間
                             pathType   : PathType.Linear                  //移動するパスの種類
                         )
                         .SetEase(Ease.Linear)
@@ -131,6 +135,7 @@ namespace DLMG.Sample
                             // 終了処理
                             if (pointNo > roots.Length)
                             {
+                                _length = 0;
                             }
                         });
                 });
