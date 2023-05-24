@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UniRx;
+using DG.Tweening;
 #if UNITY_IPHONE
 using UnityEngine.iOS;
 #endif
@@ -283,7 +284,7 @@ namespace Main
             MaxManager.Instance.ShowInterstitial(); 
         }
 
-        // プレイヤーとボードを落下
+        // 衝突でプレイヤーとボードを落下
         public void OnDeathEvent1()
         {
             if (_isEvent1) return;
@@ -292,6 +293,24 @@ namespace Main
             // イベント
             _player.OnDeathEvent1();
             _skate.OnDeathEvent1();
+            
+            // カメラ揺らす
+            _mainCamera.transform.DOShakePosition(0.5f, 3f, 6, 1.0f, false, true);
+        }
+        
+        // プレイヤーとボードを落下
+        public void OnDeathEvent2()
+        {
+            if (_isEvent1) return;
+            _isEvent1 = true;
+            
+            // イベント
+            _skate.transform.DOKill();
+            _player.OnDeathEvent2();
+            _skate.OnDeathEvent1();
+            
+            // カメラ揺らす
+            //_mainCamera.transform.DOShakePosition(0.5f, 3f, 6, 1.0f, false, true);
         }
     }
 }
