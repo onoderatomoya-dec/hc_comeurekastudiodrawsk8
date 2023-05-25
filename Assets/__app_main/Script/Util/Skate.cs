@@ -26,7 +26,7 @@ namespace Main
         void Update()
         {
 
-            if (this.transform.localRotation.eulerAngles.z > 150 && !_isFall)
+            if ((this.transform.localRotation.eulerAngles.z < 170 && this.transform.localRotation.eulerAngles.z > 150) && !_isFall)
             {
                 Debug.Log("Skate:OnDeathEvent2");
                 _isFall = true;

@@ -28,11 +28,11 @@
     <activity android:name="com.facebook.unity.FBUnityGameRequestActivity" />
     <activity android:name="com.facebook.unity.FBUnityCreateGameGroupActivity" />
     <activity android:name="com.facebook.unity.FBUnityJoinGameGroupActivity" />
-    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb562487022431133" />
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb1691038024688466" />
     <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled" android:value="true" />
     <meta-data android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled" android:value="true" />
-    <provider android:name="com.facebook.FacebookContentProvider" android:authorities="com.facebook.app.FacebookContentProvider562487022431133" android:exported="true" />
+    <provider android:name="com.facebook.FacebookContentProvider" android:authorities="com.facebook.app.FacebookContentProvider1691038024688466" android:exported="true" />
     <activity android:name="com.facebook.unity.FBUnityGamingServicesFriendFinderActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="" />
+    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="fcced6b44b8a4d9812b2709fbe360949" />
   </application>
 </manifest>

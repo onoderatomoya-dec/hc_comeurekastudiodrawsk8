@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - 
+  - fcced6b44b8a4d9812b2709fbe360949
   appIds:
-  - 0
+  - 1691038024688466
   appLabels:
-  - 0
+  - Draw sk8
   cookie: 1
   logging: 1
   status: 1

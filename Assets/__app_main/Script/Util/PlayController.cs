@@ -138,6 +138,7 @@ namespace Main
 #if UNITY_IOS
 #endif
 #if UNITY_ANDROID
+            _mainCamera.fieldOfView = 65; // fieldOfView:50 Y:0
 #endif
         }
         
@@ -291,6 +292,7 @@ namespace Main
             _isEvent1 = true;
             
             // イベント
+            Debug.Log("OnDeathEvent1");
             _player.OnDeathEvent1();
             _skate.OnDeathEvent1();
             
@@ -305,6 +307,7 @@ namespace Main
             _isEvent1 = true;
             
             // イベント
+            Debug.Log("OnDeathEvent2");
             _skate.transform.DOKill();
             _player.OnDeathEvent2();
             _skate.OnDeathEvent1();
