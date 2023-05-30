@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "18121JECB10534",
         "name": "com.eurekastudio.drawsk8",
-        "processId": 20792,
+        "processId": 11614,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -72,6 +72,18 @@
             "deviceId": "18121JECB10534",
             "name": "com.eurekastudio.drawsk8",
             "processId": 20792,
+            "exited": false
+        },
+        {
+            "deviceId": "18121JECB10534",
+            "name": "com.eurekastudio.drawsk8",
+            "processId": 11212,
+            "exited": false
+        },
+        {
+            "deviceId": "18121JECB10534",
+            "name": "com.eurekastudio.drawsk8",
+            "processId": 11614,
             "exited": false
         }
     ],

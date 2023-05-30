@@ -138,7 +138,7 @@ namespace Main
 #if UNITY_IOS
 #endif
 #if UNITY_ANDROID
-            _mainCamera.fieldOfView = 65; // fieldOfView:50 Y:0
+            //_mainCamera.fieldOfView = 70; // fieldOfView:50 Y:0
 #endif
         }
         
