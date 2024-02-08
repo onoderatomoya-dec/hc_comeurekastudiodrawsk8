@@ -156,6 +156,7 @@ namespace Main
         {
             base.Update();
             
+            
             // 押した瞬間
             if (Input.GetMouseButtonDown(0))
             {
